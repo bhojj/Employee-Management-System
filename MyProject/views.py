@@ -44,3 +44,4 @@ def about(request):
 def services(request):
     # return HttpResponse("<h1>Hello this is services page<h1>")
     return render (request,'services.html',{})
+

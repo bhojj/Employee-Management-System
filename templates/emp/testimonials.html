@@ -12,8 +12,7 @@
 
 
 
-    <h1 class="text-center my-3">Employee Management</h1>
-    <h1 class="text-center my-3">List Of Employee</h1>
+    <h1 class="text-center my-3">Testimonials</h1>
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -24,31 +23,31 @@
                   <tr>
                       <th>SN</th>
                       <th>NAME</th>
-                      <th>EMP ID</th>
-                      <th>PHONE</th>
-                      <!-- <th>EMAIL</th> -->
-                      <th>WORKING</th>
-                      <th>DEPARTMENT</th>
-                      <th>ADDRESS</th>
-                      <th>ACTION</th>
+                      <th>Testimonials</th>
+                      <th>Rating</th>
+                    
 
                     </tr>
                 </thead>
                 <tbody>
-                  {% for e in emps %}
+                  {% for t in testi %}
                   <tr>
-                    <td>{{forloop.counter}}</td>
-                    <td>{{e.name}}</td>
-                    <td>{{e.emp_id}}</td>
-                    <td>{{e.phone}}</td>
-                    <!-- <td>{{e.email}}</td> -->
-                    <td>{{e.working}}</td>
-                    <td>{{e.department}}</td>
-                    <td>{{e.address}}</td>
+
                     <td>
-                      <a href="/emp/delete-emp/{{e.id}}" class="btn btn-danger btn-sm">Delete</a>
-                      <a href="/emp/update-emp/{{e.id}}" class="btn btn-dark btn-sm">Update</a>
+                        {{forloop.counter}}
                     </td>
+                    <td>
+                      <img style="max-width: 100px;" src="/media/{{t.picture}}" alt="">
+                        {{t.name}}
+                    </td>
+                    <td>
+                        {{t.testimonials}}
+                    </td>
+                    <td>
+                        {{t.rating}}
+                    </td>
+                    
+                   
                   </tr>
                   {% endfor %}
                 </tbody>

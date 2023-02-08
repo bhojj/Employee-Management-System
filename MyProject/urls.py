@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from.views import *
+from django.conf import settings
+from django.conf.urls.static import static
+admin.site.site_header = "Employee Management System"
+admin.site.site_title = "Emp Admin Portal"
+admin.site.index_title = "Welcome to Employee Management System"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,5 +28,6 @@ urlpatterns = [
     path('index/' ,home),
     path('about/' ,about),
     path('services/' ,services),
-    path('emp/',include('emp.urls'))
-]
+    path('emp/',include('emp.urls')),
+    # path('authentication/',include("authentication.urls")),
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
